@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import './App.css'
+import HeroSection from './HeroSection'
 
 function App() {
 
   return (
-    <h1 className='underline font-bold'>Hello</h1>
+   <HeroSection/>
   )
 }
 
