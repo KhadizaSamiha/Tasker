@@ -1,17 +1,6 @@
 import { FaStar } from "react-icons/fa";
 
-export default function TaskList() {
-    const tasks = [
-        {
-            id: crypto.randomUUID(),
-            title: "Learn React Native",
-            description:
-                "I want to Learn React such thanI can treat it like my slave and make it do whatever I want to do.",
-            tags: ["web", "react", "js"],
-            priority: "High",
-            isFavorite: true,
-        }
-    ]
+export default function TaskList({ tasks, onEdit, onDelete, onFav }) {
     return (
         <div className="overflow-auto">
             <table className="table-fixed overflow-auto xl:w-full">
@@ -44,7 +33,7 @@ export default function TaskList() {
                     {tasks.map((task) => (
                         <tr
                             key={task.id}
-                            className="border-b border-gray-300 [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
+                            className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
                             <td>
                                 <button onClick={() => onFav(task.id)}>
                                     {task.isFavorite ? (
